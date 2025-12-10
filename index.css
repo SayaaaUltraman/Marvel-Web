@@ -1,0 +1,812 @@
+/* =========================
+  GLOBAL
+========================= */
+/* Atur tampilan dasar halaman */
+body {
+  margin: 0; /* Hilangkan jarak default */
+  font-family: 'Roboto Condensed', sans-serif; /* Font utama */
+  background-color: #111; /* Warna dasar gelap */
+  color: white; /* Warna teks */
+}
+
+/* =========================
+  HEADER
+========================= */
+/* Bar atas */
+.top-bar {
+  background-color: #2b2b2b; /* Warna header */
+  display: flex; /* Susunan horizontal */
+  justify-content: space-between; /* Bagi kiri–kanan */
+  align-items: center; /* Rata tengah vertikal */
+  padding: 10px 50px; /* Spasi dalam */
+  font-size: 14px; /* Ukuran teks */
+}
+
+/* Link login & subscribe */
+.auth a,
+.subscribe a {
+  color: white; /* Warna link */
+  text-decoration: none; /* Hilangkan garis bawah */
+  margin: 0 5px; /* Jarak antar link */
+}
+
+/* Logo Marvel */
+.marvel-logo {
+  background-color: #e62429; /* Warna khas Marvel */
+  font-weight: 900; /* Tebal */
+  font-size: 28px; /* Ukuran besar */
+  padding: 5px 15px; /* Spasi dalam */
+  letter-spacing: 1px; /* Jarak antar huruf */
+  color: white;
+}
+
+/* =========================
+  NAVBAR
+========================= */
+/* Wrapper navbar */
+.main-nav {
+  background-color: #1a1a1a; /* Warna navbar */
+  text-align: center; /* Menu rata tengah */
+  position: relative; /* Untuk hamburger menu */
+  z-index: 100; /* Di atas elemen lain */
+}
+
+/* List menu navbar */
+.main-nav ul {
+  list-style: none; /* Hilangkan bullet */
+  margin: 0;
+  padding: 0;
+  display: inline-flex; /* Susunan horizontal fleksibel */
+  gap: 30px; /* Jarak antar menu */
+}
+
+/* Link navbar */
+.main-nav a {
+  text-decoration: none;
+  color: white; /* Warna default */
+  padding: 15px 0; /* Spasi klik */
+  display: inline-block; /* Agar padding bekerja */
+  transition: 0.3s; /* Animasi hover */
+}
+
+/* Hover merah */
+.main-nav a:hover,
+.main-nav a.active {
+  color: #e62429; /* Highlight menu */
+}
+
+/* =========================
+  HAMBURGER
+========================= */
+/* Tombol hamburger */
+.menu-toggle {
+  display: none; /* Sembunyikan default */
+  flex-direction: column; /* Garis bertumpuk */
+  justify-content: center;
+  gap: 5px;
+  position: absolute; /* Posisi di pojok */
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer; /* Kursor tangan */
+  z-index: 1001; /* Lebih atas dari navbar */
+}
+
+/* Garis hamburger */
+.bar {
+  width: 28px; /* Lebar garis */
+  height: 3px; /* Tinggi garis */
+  background-color: white;
+  transition: 0.3s; /* Animasi perubahan */
+}
+
+/* =========================
+  BUTTON UNIVERSAL
+========================= */
+.btn {
+  text-decoration: none;
+  padding: 12px 25px; /* Ukuran tombol */
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 5px; /* Sudut melengkung */
+  transition: 0.3s;
+}
+
+/* Tombol merah */
+.btn.red {
+  background-color: #e62429; /* Warna khas Marvel */
+  color: white;
+}
+
+/* Hover tombol merah */
+.btn.red:hover {
+  background-color: #b71c1c; /* Gelap saat hover */
+}
+
+/* =========================
+  FOOTER
+========================= */
+footer {
+  background-color: #111;
+  color: gray; /* Warna teks footer */
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* =========================
+  RESPONSIVE MENU
+========================= */
+@media (max-width: 850px) {
+  .main-nav ul {
+    display: none; /* Menu disembunyikan */
+    flex-direction: column; /* Tumpuk ke bawah */
+    background-color: #1a1a1a;
+    position: absolute; /* Muncul dari kanan */
+    top: 50px;
+    right: 0;
+    width: 220px;
+    text-align: right;
+    padding: 20px;
+    border-left: 2px solid #e62429; /* Garis merah samping */
+    opacity: 0; /* Hilang dulu */
+    transform: translateY(-10px); /* Animasi turun */
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  /* Tampilkan menu */
+  .main-nav ul.show {
+    display: flex; /* Tampilkan */
+    opacity: 1; /* Muncul */
+    transform: translateY(0);
+  }
+
+  /* Tampilkan hamburger */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Animasi hamburger jadi X */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0; /* Hilangkan garis tengah */
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+/* =========================
+  RESPONSIVE LOGIN PAGE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .login-card {
+    width: 90%;
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .logo {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+
+  .login-card h2 {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .btn-login {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .back-home {
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+
+
+/* =========================
+  HERO
+========================= */
+#hero {
+  position: relative; /* Untuk overlay */
+  height: 90vh; /* Tinggi hampir full */
+  background: url('theavengers_lob_mas_mob_02_1.jpg') no-repeat center center / cover; /* Gambar background */
+  display: flex;
+  align-items: center; /* Tengah vertical */
+  justify-content: center; /* Tengah horizontal */
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Layer gelap */
+.overlay {
+  position: absolute; /* Tutupi seluruh hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.6); /* Efek gelap */
+}
+
+/* Isi hero */
+#hero .content {
+  position: relative; /* Di atas overlay */
+  z-index: 1; /* Supaya terlihat */
+  max-width: 700px;
+}
+
+/* Judul hero */
+#hero h1 {
+  font-size: 60px; /* Ukuran besar */
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/* Paragraf hero */
+#hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #eaeaea; /* Abu-abu terang */
+}
+
+/* =========================
+  CHARACTERS
+========================= */
+.characters-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.characters-section h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #e62429; /* Warna judul */
+}
+
+.characters-section p {
+  font-size: 18px;
+  color: #ccc; /* Abu-abu halus */
+  margin-bottom: 40px;
+}
+
+/* Grid karakter */
+.characters-container {
+  display: grid; /* Layout grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
+  gap: 30px; /* Jarak card */
+  max-width: 2100px;
+  margin: 0 auto;
+}
+
+/* Box karakter */
+.character-item {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s; /* Animasi hover */
+}
+
+/* Hover karakter */
+.character-item:hover {
+  transform: scale(1.05); /* Membesar sedikit */
+}
+
+/* Gambar karakter */
+.character-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Foto ter-crop rapi */
+}
+
+/* Nama karakter */
+.character-item h2 {
+  color: #e62429;
+  padding: 10px;
+}
+
+/* Deskripsi karakter */
+.character-item p {
+  padding: 0 15px 15px;
+  color: #ddd;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/* =========================
+  COMICS
+========================= */
+.comics-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Judul komik */
+.comics-section h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #e62429;
+}
+
+/* Paragraf */
+.comics-section p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Grid komik */
+.comics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Item komik */
+.comic-item {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Judul - isi - tombol */
+  justify-content: space-between;
+  transition: transform 0.3s;
+}
+
+/* Hover */
+.comic-item:hover {
+  transform: scale(1.03);
+}
+
+/* Gambar komik */
+.comic-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Nama komik */
+.comic-item h2 {
+  color: #e62429;
+  padding: 15px;
+  margin: 0;
+}
+
+/* Deskripsi */
+.comic-item p {
+  padding: 0 15px 15px;
+  color: #ddd;
+  font-size: 14px;
+  text-align: justify;
+  flex-grow: 1; /* Isi memanjang */
+}
+
+/* Tombol */
+.comic-item .btn {
+  margin: 0 0 15px 0;
+  align-self: center; /* Tengah */
+}
+
+/* =========================
+  MORE
+========================= */
+.more-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.more-section h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #e62429;
+}
+
+.more-section p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Grid more */
+.more-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Item more */
+.more-item {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.more-item:hover {
+  transform: scale(1.03);
+}
+
+/* Judul item */
+.more-item h2 {
+  color: #e62429;
+  margin-bottom: 10px;
+}
+
+.more-item p {
+  color: #ddd;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/* =========================
+  CONTACT
+========================= */
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-section h1 {
+  font-size: 45px;
+  font-weight: 900;
+  color: #e62429;
+}
+
+.contact-section p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Wrapper form */
+.contact-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Agar responsif */
+  justify-content: center;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Input dan textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px; /* Spasi dalam */
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #e62429; /* Border fokus */
+}
+
+/* Tombol kirim */
+.contact-form button {
+  background-color: #e62429;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px; /* Tombol oval */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(230, 36, 41, 0.4);
+  font-size: 16px;
+}
+
+/* Hover tombol kontak */
+.contact-form button:hover {
+  background-color: #b71c1c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(230, 36, 41, 0.6);
+}
+
+/* Info kontak */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left; /* Rata kiri */
+}
+
+.contact-info h2 {
+  color: #e62429;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #ddd;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.contact-info a {
+  color: #e62429;
+  text-decoration: none;
+}
+
+/* =========================
+  NEWS
+========================= */
+.news-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.news-section h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #e62429;
+}
+
+.news-section p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Grid news */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Item news */
+.news-item {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.news-item:hover {
+  transform: scale(1.03);
+}
+
+.news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-item h2 {
+  color: #e62429;
+  padding: 15px;
+}
+
+.news-item p {
+  padding: 0 15px 15px;
+  color: #ddd;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/* =========================
+  VIDEOS
+========================= */
+.videos-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.videos-section h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #e62429;
+}
+
+.videos-section p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Grid video */
+.videos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Item video */
+.video-item {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.video-item:hover {
+  transform: scale(1.03);
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+.video-item h2 {
+  color: #e62429;
+  padding: 15px;
+  font-size: 18px;
+}
+
+/* =========================================================================
+  LOGIN PAGE
+   ========================================================================= */
+
+/* --- LOGIN: Background halaman --- */
+.login-body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('Marvel-Comics-15-Things-You-Probably-Didnt-Know.jpeg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* --- LOGIN: Overlay gelap di belakang card --- */
+.bg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 23, 40, 0.7);
+    backdrop-filter: blur(2px);
+    pointer-events: none; /* Tidak menghalangi interaksi */
+}
+
+/* --- LOGIN: Card utama login --- */
+.login-card {
+    width: 420px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease;
+}
+
+/* --- LOGIN: Logo Marvel di atas card --- */
+.logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* --- LOGIN: Judul utama LOGIN --- */
+.login-card h2 {
+    margin: 10px 0 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e62429;
+}
+
+/* --- LOGIN: Deskripsi kecil di bawah judul --- */
+.desc {
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* --- LOGIN: Input email --- */
+.login-card input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* --- LOGIN: Tombol Continue --- */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #e62429;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #cc1a1e;
+}
+
+/* --- LOGIN: Tombol Back to Home di pojok kiri atas --- */
+.back-home {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background: rgba(0,0,0,0.4);
+    padding: 8px 14px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.back-home:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+/* --- LOGIN: Footer kecil di bawah card --- */
+.footer-text {
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+.footer-text a {
+    color: #e62429;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- LOGIN: Animasi fade-in --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Indonesia - Characters</title>
+  <link rel="stylesheet" href="index.css"> <!-- memanggil file CSS -->
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="top-bar"> <!-- bagian atas header -->
+      <div class="auth"> <!-- link login & signup -->
+        <a href="login.html" target="_blank">LOG IN</a> | 
+        <a href="https://www.marvel.com/movies" target="_blank">SIGN UP</a>
+      </div>
+      <div class="marvel-logo">MARVEL</div> <!-- logo tulisan -->
+      <div class="subscribe"> <!-- link marvel unlimited -->
+        <a href="#">MARVEL UNLIMITED</a>
+      </div>
+    </div>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="main-nav" id="main-nav">
+      <ul id="menu-list"> <!-- daftar menu navbar -->
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="comics.html">COMICS</a></li>
+        <li><a href="characters.html" class="active">CHARACTERS</a></li> <!-- menu aktif -->
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="more.html">MORE</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menu-toggle"> <!-- tombol menu responsive -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============== CHARACTERS SECTION ============== -->
+  <main class="characters-section"> <!-- konten utama -->
+    <h1>Marvel Characters</h1>
+    <p>Kenali para pahlawan dan penjahat legendaris dari dunia Marvel!</p>
+
+    <div class="characters-container"> <!-- container semua karakter -->
+      <article class="character-item"> <!-- item karakter 1 -->
+        <img src="ironman31.jpg" alt="Iron Man">
+        <h2>Iron Man</h2>
+        <p>Genius, milyarder, dan pahlawan berlapis baja — Tony Stark melindungi dunia dengan teknologi canggih.</p>
+      </article>
+
+      <article class="character-item"> <!-- item karakter 2 -->
+        <img src="304454-2880x1800-desktop-hd-captain-america-wallpaper-image.jpg" alt="Captain America">
+        <h2>Captain America</h2>
+        <p>Pahlawan super dari masa Perang Dunia II yang berjuang demi keadilan dengan perisainya yang ikonik.</p>
+      </article>
+
+      <article class="character-item"> <!-- item karakter 3 -->
+        <img src="black-widow-was-originally-sched.jpg" alt="Black Widow">
+        <h2>Black Widow</h2>
+        <p>Natasha Romanoff, mantan agen rahasia Rusia yang menjadi salah satu anggota penting Avengers.</p>
+      </article>
+
+      <article class="character-item"> <!-- item karakter 4 -->
+        <img src="324695-3840x2160-desktop-4k-thor-wallpaper-image.jpg" alt="Thor">
+        <h2>Thor</h2>
+        <p>Dewa Petir dari Asgard yang memegang palu legendaris Mjolnir untuk melindungi alam semesta.</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <p>&copy; 2025 MARVEL. All Rights Reserved.</p> <!-- hak cipta -->
+  </footer>
+
+  <script src="index.js"></script> <!-- file JS -->
+</body>
+</html>

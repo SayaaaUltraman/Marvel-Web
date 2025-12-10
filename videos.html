@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"> <!-- Set karakter UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agar responsif di HP -->
+  <title>Marvel Indonesia - Videos</title>
+  <link rel="stylesheet" href="index.css"> <!-- Menghubungkan CSS -->
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar"> <!-- Bar bagian atas -->
+      <div class="auth"> <!-- Menu login -->
+        <a href="login.html" target="_blank">LOG IN</a> | 
+        <a href="https://www.marvel.com/movies" target="_blank">SIGN UP</a>
+      </div>
+      <div class="marvel-logo">MARVEL</div> <!-- Logo Marvel -->
+      <div class="subscribe"> <!-- Tombol Marvel Unlimited -->
+        <a href="https://www.marvel.com/unlimited" target="_blank">MARVEL UNLIMITED</a>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav" id="main-nav"> <!-- Navigasi utama -->
+      <ul id="menu-list"> <!-- Menu daftar halaman -->
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="comics.html">COMICS</a></li>
+        <li><a href="characters.html">CHARACTERS</a></li>
+        <li><a href="videos.html" class="active">VIDEOS</a></li> <!-- Halaman aktif -->
+        <li><a href="more.html">MORE</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menu-toggle"> <!-- Hamburger menu mobile -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- VIDEOS SECTION -->
+  <main class="videos-section"> <!-- Bagian konten video -->
+    <h1>Marvel Videos</h1>
+    <p>Nikmati trailer, teaser, dan klip eksklusif dari dunia Marvel.</p>
+
+    <div class="videos-container"> <!-- Container untuk semua video -->
+      <article class="video-item"> <!-- Item video -->
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/TcMBFSGVi1c" title="Avengers Trailer" frameborder="0" allowfullscreen></iframe> <!-- Video Avengers -->
+        <h2>Avengers: Endgame Trailer</h2>
+      </article>
+
+      <article class="video-item"> <!-- Video Spider-Man -->
+  <iframe width="100%" height="200"
+          src="https://www.youtube.com/embed/JfVOs4VSpmA"
+          title="Spider-Man Trailer"
+          frameborder="0" allowfullscreen></iframe>
+  <h2>Spider-Man: No Way Home Trailer</h2>
+</article>
+
+<article class="video-item"> <!-- Video Black Panther -->
+  <iframe width="100%" height="200"
+          src="https://www.youtube.com/embed/xjDjIWPwcPU"
+          title="Black Panther Trailer"
+          frameborder="0" allowfullscreen></iframe>
+  <h2>Black Panther Trailer</h2>
+</article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 MARVEL. All Rights Reserved.</p> <!-- Footer -->
+  </footer>
+
+  <script src="index.js"></script> <!-- File JavaScript -->
+</body>
+</html>

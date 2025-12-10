@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"> <!-- set karakter -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- biar responsif -->
+  <title>Marvel Indonesia - More</title>
+  <link rel="stylesheet" href="index.css"> <!-- hubungkan CSS -->
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar"> <!-- bar atas -->
+      <div class="auth"> <!-- login signup -->
+        <a href="login.html" target="_blank">LOG IN</a> | 
+        <a href="https://www.marvel.com/movies" target="_blank">SIGN UP</a>
+      </div>
+
+      <div class="marvel-logo">MARVEL</div> <!-- logo -->
+
+      <div class="subscribe"> <!-- menu unlimited -->
+        <a href="https://www.marvel.com/unlimited" target="_blank">MARVEL UNLIMITED</a>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav"> <!-- navbar -->
+      <button class="menu-toggle" id="menu-toggle"> <!-- tombol hamburger -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul id="menu-list"> <!-- menu navbar -->
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="comics.html">COMICS</a></li>
+        <li><a href="characters.html">CHARACTERS</a></li>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="more.html" class="active">MORE</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MORE SECTION -->
+  <main class="more-section"> <!-- section utama -->
+    <h1>Explore More Marvel</h1>
+    <p>Temukan fitur dan konten tambahan dari Marvel Indonesia.</p>
+
+    <div class="more-container"> <!-- wadah item -->
+      <article class="more-item"> <!-- item 1 -->
+        <h2>Marvel Games</h2>
+        <p>Game terbaru Marvel tersedia di berbagai platform, dari konsol hingga mobile. Rasakan petualangan pahlawan favoritmu!</p>
+      </article>
+
+      <article class="more-item"> <!-- item 2 -->
+        <h2>Merchandise Resmi</h2>
+        <p>Temukan koleksi merchandise resmi Marvel: action figures, poster, pakaian, dan lainnya.</p>
+      </article>
+
+      <article class="more-item"> <!-- item 3 -->
+        <h2>Event & Conventions</h2>
+        <p>Ikuti berbagai event Marvel di Indonesia, termasuk meet & greet, screening, dan cosplay competitions.</p>
+      </article>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section"> <!-- form kontak -->
+      <h1>Hubungi Kami</h1>
+      <p>Jika ada pertanyaan atau saran, silakan isi formulir berikut atau hubungi kami melalui email.</p>
+
+      <div class="contact-container"> <!-- pembungkus -->
+        
+        <form class="contact-form" action="mailto:info@marvelindonesia.com" method="post" enctype="text/plain"> <!-- form email -->
+          <input type="text" name="name" placeholder="Nama Anda" required>
+          <input type="email" name="email" placeholder="Email Anda" required>
+          <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+          <button type="submit" class="btn red">KIRIM PESAN</button>
+        </form>
+
+        <div class="contact-info"> <!-- info kontak -->
+          <h2>Info Kontak</h2>
+          <p>Email: info@marvelindonesia.com</p>
+          <p>Telepon: +62 812 3456 7890</p>
+          <p>Alamat: Jl. Pahlawan No.1, Jakarta, Indonesia</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer> <!-- footer -->
+    <p>&copy; 2025 MARVEL. All Rights Reserved.</p>
+  </footer>
+
+  <script src="index.js"></script> <!-- script JS -->
+</body>
+</html>
