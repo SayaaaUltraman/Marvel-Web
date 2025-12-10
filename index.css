@@ -181,30 +181,21 @@ footer {
     transform: rotate(-45deg) translate(6px, -6px);
   }
 }
-/* =========================
-  RESPONSIVE LOGIN PAGE
-   ========================= */
 
 @media (max-width: 600px) {
-
-  body {
-    background-position: center;
-    background-size: cover;
-  }
-
   .login-card {
-    width: 90%;
-    padding: 25px 20px;
+    width: 90%; /* Lebar card menyesuaikan layar */
+    padding: 25px 20px; /* Padding lebih kecil */
     border-radius: 15px;
   }
 
   .logo {
-    width: 120px;
+    width: 120px; /* Logo lebih kecil */
     margin-bottom: 15px;
   }
 
   .login-card h2 {
-    font-size: 20px;
+    font-size: 20px; /* Judul lebih kecil */
   }
 
   .desc {
@@ -212,9 +203,9 @@ footer {
     margin-bottom: 20px;
   }
 
-  input {
+  .login-card input {
     font-size: 14px;
-    padding: 10px 12px;
+    padding: 10px 12px; /* Input tidak terlalu besar */
   }
 
   .btn-login {
@@ -228,7 +219,21 @@ footer {
     padding: 6px 12px;
     font-size: 13px;
   }
+
+  /* Jika ada tombol Sign Up dan Sign In berdampingan */
+  .auth {
+    display: flex;
+    flex-direction: column; /* Tumpuk vertikal */
+    gap: 10px;
+    width: 100%;
+  }
+
+  .auth a {
+    width: 100%;
+    text-align: center;
+  }
 }
+
 
 
 
@@ -810,3 +815,4 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
